@@ -1,0 +1,32 @@
+{
+  "http": {
+    "port": 80
+  },
+  "logging":{
+    "level": "info"
+  },
+  "linkedin":{
+    "client_id": "78w8as5lfw47v5",
+    "client_secret": "qnFQH5zpwivPujHZ",
+    "redirect_uri": "http://localhost/callback"
+  },
+  "queue-server":{
+    "url": "amqp://linkedin-gartner-rabbit.com:5672"
+  },
+  "queues":{
+    "linkedin-profiles":{
+      "name": "linkedin_profiles_fetcher"
+    }
+  },
+  "db":{
+    "url": "mongodb://linkedin-gartner-mongo.com/linkedinParser"
+  },
+  "public-client":{
+    "cookie":{
+      "prefix": "ingar"
+    },
+    "env":{
+      "name": "prod"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "queues":{
+    "linkedin-profiles":{
+      "name": "linkedin_profiles_fetcher_test"
+    }
+  },
+  "db":{
+    "url": "mongodb://linkedin-gartner-mongo.com/linkedinParser_test"
+  }
+}

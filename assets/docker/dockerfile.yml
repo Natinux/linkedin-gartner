@@ -1,0 +1,17 @@
+FROM ubuntu:16.04
+
+RUN apt-get update
+RUN apt-get install -y curl build-essential net-tools telnet iputils-ping gedit
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install gulp babel-cli -g
+
+WORKDIR /linkedin-gartner/
+
+ADD ./package.json .
+RUN npm install
+
+ADD . .
+RUN gulp dockerBuildImage
+
+ENTRYPOINT gulp dockerBuildContainer --env ${ENV_NAME} && npm start

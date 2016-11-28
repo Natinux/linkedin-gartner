@@ -1,0 +1,14 @@
+
+node_modules/
+
+.idea/
+*.orig
+
+dist/
+npm-debug.log
+config.json
+.vscode/
+src/public/docs/api_data.js
+src/public/docs/api_data.json
+src/public/docs/api_project.js
+src/public/docs/api_project.json

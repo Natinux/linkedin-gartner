@@ -1,0 +1,5 @@
+export const ADD_ALERT = 'ADD_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const SET_USER_DATA_LINKEDIN = 'SET_USER_DATA_LINKEDIN';
+export const ADD_PROFILES = 'ADD_PROFILES';
+export const ADD_SKILLS = 'ADD_SKILLS';

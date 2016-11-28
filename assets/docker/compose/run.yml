@@ -1,0 +1,34 @@
+version: '2'
+services:
+  linkedin-gartner:
+    image: gertner/linkedin-gartner:latest
+    entrypoint:
+        - npm
+        - run
+        - config-then-run
+    ports:
+      - 80:80
+    environment:
+        ENV_NAME: "prod"
+    links:
+        - linkedin-gartner-rabbit:linkedin-gartner-rabbit.com
+        - linkedin-gartner-mongo:linkedin-gartner-mongo.com
+  linkedin-gartner-worker:
+    image: gertner/linkedin-gartner:latest
+    entrypoint:
+        - npm
+        - run
+        - config-then-run-worker
+    environment:
+          ENV_NAME: "prod"
+    links:
+        - linkedin-gartner-rabbit:linkedin-gartner-rabbit.com
+        - linkedin-gartner-mongo:linkedin-gartner-mongo.com
+  linkedin-gartner-mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+  linkedin-gartner-rabbit:
+    image: rabbitmq:3.6
+    ports:
+      - 5672:5672
